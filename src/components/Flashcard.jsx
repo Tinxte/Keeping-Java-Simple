@@ -1,6 +1,9 @@
-import trivia from "./trivia.json";
+import data from "./trivia.json";
 
 export default function FlashCard() {
+
+
+
 
 //TODO Write handleClick function, randomize trivia index and cycle through index onclick
 
@@ -10,16 +13,26 @@ export default function FlashCard() {
             return randomIndex
         }
 
-function handleClick() {
+        // const [currentFlashCard, setFlashCardIndex] = useState(0);
 
+let trivia = data.trivia;
+let currentCard = trivia[randomSelection()];
+
+    function cardClick() {
+        //TODO card flip function
+    }
+
+function buttonClick() {
+    //TODO "next" button switches to next card trivia
 }
 
-//TODO Write return statment with FlashCard + Next button HTML
+//TODO Write return statement with FlashCard + Next button HTML
 
     return (
-        <div>
+        <div id = "card">
             {/* testing randomSelection() */}
-            {randomSelection()}
+            {/* {randomSelection()} */}
+        <p>{currentCard.question}</p>
         </div>
     );
 }

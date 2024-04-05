@@ -1,7 +1,8 @@
-[
+{ "trivia" :
+    [
 
     {
-        "question": "question1",
+        "question": "question1 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem more ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum this is the end",
         "answer": "answer1"
     },
 
@@ -21,3 +22,4 @@
     }
 
 ]
+}

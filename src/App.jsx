@@ -17,7 +17,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Keeping Java Simple</h1>
+      <h1>Keeping <font color= "#ED8B00">Java</font> Simple</h1>
 
       {/* TODO replace below with flashcard */}
 <div>

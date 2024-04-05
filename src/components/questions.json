@@ -1,0 +1,11 @@
+[
+  {
+    "question": "What structure is used to store data as key/value pairs?",
+    "answer": "HashMaps"
+  },
+  {
+    "question": "How do you add an item to a HashMap?",
+    "answer": ".put() method"
+  }
+
+]
