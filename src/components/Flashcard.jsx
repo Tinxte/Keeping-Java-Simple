@@ -40,26 +40,28 @@ function handleCardClick() {
     // }
 };
 
-//TODO "next" button switches to next card trivia
-    // const [currentFlashCard, setFlashCardIndex] = useState(currentCardIndex);
 
+    function handleNextClick() {
+        //TODO "next" button switches to next card trivia
 
-    // function cardClick() {
-    //     //TODO card flip function
-    //     if (currentFlashCard < trivia.length-1)
-    //     {
-    //         setFlashCardIndex(currentFlashCard + 1)
-    //     }
-    //     else {
-    //         setFlashCardIndex(0);
-    //     }
-    // }
+        // if (currentFlashCard < trivia.length-1)
+        // {
+        //     setFlashCardIndex(currentFlashCard + 1)
+        // }
+        // else {
+        //     setFlashCardIndex(0);
+        // }
+        
+    }
 
 //TODO Write return statement with FlashCard + Next button HTML
 
     return (
+        <>
         <div onClick={handleCardClick} className={flashCardState.currentCardState}>
         <p>{trivia[flashCardState.currentStateIndex][flashCardState.currentCardState]}</p>
         </div>
+        <button className="nextButton">Next</button>
+        </>
     );
 }

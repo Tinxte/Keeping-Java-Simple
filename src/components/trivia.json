@@ -2,13 +2,13 @@
     [
 
     {
-        "question": "question1 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem more ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum this is the end",
-        "answer": "answer1"
+        "question": "question1: What structure is used to store data as key/value pairs?",
+        "answer": "answer1: HashMaps"
     },
 
     {
-        "question": "question2",
-        "answer": "answer2"
+        "question": "question2: How do you add an item to a HashMap?",
+        "answer": "answer2: .put() method"
     },
 
     {
