@@ -58,7 +58,7 @@ function handleCardClick() {
 
     return (
         <>
-        <div onClick={handleCardClick} className={flashCardState.currentCardState}>
+        <div onClick={handleCardClick} id="flashCard" className={flashCardState.currentCardState}>
         <p>{trivia[flashCardState.currentStateIndex][flashCardState.currentCardState]}</p>
         </div>
         <button className="nextButton">Next</button>

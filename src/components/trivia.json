@@ -12,14 +12,18 @@
     },
 
     {
-        "question": "question3",
-        "answer": "answer3"
+        "question": "question3: How do you access elements in a HashMap?",
+        "answer": "answer3: .get() method"
     },
 
     {
-        "question": "question4",
-        "answer": "answer4"
-    }
+        "question": "question4: Which method returns a collection containing all keys in a HashMap?",
+        "answer": "answer4: .keySet() method"
+    },
 
+    {
+        "question": "question5: How do you print a statement in Java?",
+        "answer": "answer5: System.out.println()"
+    }
 ]
 }

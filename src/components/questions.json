@@ -6,6 +6,26 @@
   {
     "question": "How do you add an item to a HashMap?",
     "answer": ".put() method"
+  },
+  {
+    "question": "How do you access elements in a HashMap?",
+    "answer": ".get() method"
+  },
+  {
+    "question": "Which method returns a collection containing all keys in a HashMap?",
+    "answer": ".keySet() method"
+  },
+  {
+    "question": "How do you print a statement in Java?",
+    "answer" : "System.out.println()"
+  },
+  {
+    "question": "",
+    "answer" : ";"
+  },
+  {
+    "question": "How do you declare a new HashMap?",
+    "answer" : "HashMap<dataType, dataType> variableName = new HashMap<>();"
   }
 
 ]
