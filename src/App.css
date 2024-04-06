@@ -1,6 +1,6 @@
 /*style flashcard component */
 
-#question {
+.question {
   width: 500px;
   height: 250px;
   display: flex;
@@ -14,7 +14,7 @@
   border-radius: 5px
 }
 
-#answer {
+.answer {
   width: 500px;
   height: 250px;
   display: flex;

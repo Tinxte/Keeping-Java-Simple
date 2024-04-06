@@ -3,8 +3,7 @@ import { useState } from "react";
 
 export default function FlashCard() {
 
-
-
+ 
 
 //TODO Write handleClick function, randomize trivia index and cycle through index onclick
 
@@ -14,25 +13,32 @@ export default function FlashCard() {
             return randomIndex
         }
 
+
+//Pull data from JSON and select random starting index
 let trivia = data.trivia;
 let startingCardIndex = randomSelection();
 
 //TODO fix scope issues with randomization pulling wrong answers
 let currentCardIndex = startingCardIndex;
 let currentCardContent = trivia[currentCardIndex];
-let currentCardState = "question";
+// let currentCardState = "question";
 
-const [flashCardState, setFlashCardState] = useState("question");
+const [flashCardState, setFlashCardState] = useState({
+    currentCardState: "question",
+    currentStateIndex: currentCardIndex
+});
+
 
 function handleCardClick() {
-    if (currentCardState = "question") {
-        setFlashCardState("answer");
-//TODO fix this so state can be reverted to Question on click
-    // } else if (currentCardState = "answer") {
-    //     setFlashCardState("question")
+    if (flashCardState.currentCardState = "question") {
+        setFlashCardState({currentCardState: "answer",
+    currentStateIndex: flashCardState.currentStateIndex});
     }
+//TODO fix below statement so currentCardState can be reverted to show Question on second click
+    // else if (flashCardState.currentCardState = "answer") {
+    //         setFlashCardState({currentCardState: "question"})
+    // }
 };
-
 
 //TODO "next" button switches to next card trivia
     // const [currentFlashCard, setFlashCardIndex] = useState(currentCardIndex);
@@ -52,8 +58,8 @@ function handleCardClick() {
 //TODO Write return statement with FlashCard + Next button HTML
 
     return (
-        <div onClick={handleCardClick} id={flashCardState}>
-        <p>{currentCardContent[flashCardState]}</p>
+        <div onClick={handleCardClick} className={flashCardState.currentCardState}>
+        <p>{trivia[flashCardState.currentStateIndex][flashCardState.currentCardState]}</p>
         </div>
     );
 }
