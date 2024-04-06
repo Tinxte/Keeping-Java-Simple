@@ -1,4 +1,5 @@
 import data from "./trivia.json";
+import { useState } from "react";
 
 export default function FlashCard() {
 
@@ -13,27 +14,46 @@ export default function FlashCard() {
             return randomIndex
         }
 
-        // const [currentFlashCard, setFlashCardIndex] = useState(0);
-
 let trivia = data.trivia;
-let currentCard = trivia[randomSelection()];
+let startingCardIndex = randomSelection();
 
-    function cardClick() {
-        //TODO card flip function
+//TODO fix scope issues with randomization pulling wrong answers
+let currentCardIndex = startingCardIndex;
+let currentCardContent = trivia[currentCardIndex];
+let currentCardState = "question";
+
+const [flashCardState, setFlashCardState] = useState("question");
+
+function handleCardClick() {
+    if (currentCardState = "question") {
+        setFlashCardState("answer");
+//TODO fix this so state can be reverted to Question on click
+    // } else if (currentCardState = "answer") {
+    //     setFlashCardState("question")
     }
+};
 
-function buttonClick() {
-    //TODO "next" button switches to next card trivia
-}
+
+//TODO "next" button switches to next card trivia
+    // const [currentFlashCard, setFlashCardIndex] = useState(currentCardIndex);
+
+
+    // function cardClick() {
+    //     //TODO card flip function
+    //     if (currentFlashCard < trivia.length-1)
+    //     {
+    //         setFlashCardIndex(currentFlashCard + 1)
+    //     }
+    //     else {
+    //         setFlashCardIndex(0);
+    //     }
+    // }
 
 //TODO Write return statement with FlashCard + Next button HTML
 
     return (
-        <div id = "card">
-            {/* testing randomSelection() */}
-            {/* {randomSelection()} */}
-        <p>{currentCard.question}</p>
+        <div onClick={handleCardClick} id={flashCardState}>
+        <p>{currentCardContent[flashCardState]}</p>
         </div>
     );
 }
-
