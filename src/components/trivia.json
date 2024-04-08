@@ -24,6 +24,10 @@
     {
         "question": "question5: How do you print a statement in Java?",
         "answer": "answer5: System.out.println()"
+    },
+    {
+        "question": "question6: True or False: a main method is required to run a Java program.",
+        "answer": "answer6: True"
     }
 ]
 }
