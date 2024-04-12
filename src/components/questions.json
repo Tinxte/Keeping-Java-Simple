@@ -44,6 +44,14 @@
     "answer" : "False: Constructors are not declared with a return type."
   },
   {
+    "question": "How would you create a constant variable in Java?",
+    "answer" : "To make a constant in Java, initialize it as a static final variable."
+  },
+  {
+    "question": "",
+    "answer" : ""
+  },
+  {
     "question": "",
     "answer" : ""
   },
