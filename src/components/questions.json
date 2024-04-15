@@ -48,8 +48,8 @@
     "answer" : "To make a constant in Java, initialize it as a static final variable."
   },
   {
-    "question": "",
-    "answer" : ""
+    "question": "How do you annotate a method to create a unit test?",
+    "answer" : "The annotation '@Test' is used to indicate a method should be treated as a test case."
   },
   {
     "question": "",
