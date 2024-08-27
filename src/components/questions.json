@@ -52,6 +52,10 @@
     "answer" : "The annotation '@Test' is used to indicate a method should be treated as a test case."
   },
   {
+    "question": "What are the four pillars of object-oriented programming?",
+    "answer" : "Inheritance, Encapsulation, Abstraction, and Polymorphism"
+  },
+  {
     "question": "",
     "answer" : ""
   },
