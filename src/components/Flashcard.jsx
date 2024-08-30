@@ -3,8 +3,6 @@ import { useState } from "react";
 
 export default function FlashCard() {
 
- 
-
 //TODO Write handleClick function, randomize trivia index and cycle through index onclick
 
 //Random index function
@@ -12,7 +10,6 @@ export default function FlashCard() {
         let randomIndex = Math.floor(Math.random()*trivia.length);
             return randomIndex
         }
-
 
 //Pull data from JSON and select random starting index
 let trivia = data.trivia;
@@ -35,9 +32,11 @@ function handleCardClick() {
     currentStateIndex: flashCardState.currentStateIndex});
     }
 //TODO fix below statement so currentCardState can be reverted to show Question on second click
-    // else if (flashCardState.currentCardState = "answer") {
-    //         setFlashCardState({currentCardState: "question"})
-    // }
+    else if (flashCardState.currentCardState = "answer") {
+            setFlashCardState({currentCardState: "question",
+                currentStateIndex: flashCardState.currentStateIndex
+            })
+    }
 };
 
 
