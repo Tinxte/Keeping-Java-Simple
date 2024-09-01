@@ -1,23 +1,21 @@
-import data from "./trivia.json";
+// import data from "./trivia.json";
 import { useState } from "react";
 
-export default function FlashCard() {
+export default function FlashCard({number, data}) {
 
 //TODO Write handleClick function, randomize trivia index and cycle through index onclick
 
-//Random index function
-    function randomSelection() {
-        let randomIndex = Math.floor(Math.random()*trivia.length);
-            return randomIndex
-        }
+let startingCardIndex = number;
+// console.log(startingCardIndex);
 
-//Pull data from JSON and select random starting index
-let trivia = data.trivia;
-let startingCardIndex = randomSelection();
+//Pull data from parent component JSON
 
-//TODO fix scope issues with randomization pulling wrong answers
+let trivia = data;
+// console.log(trivia);
+
+
 let currentCardIndex = startingCardIndex;
-let currentCardContent = trivia[currentCardIndex];
+// let currentCardContent = trivia[currentCardIndex];
 // let currentCardState = "question";
 
 const [flashCardState, setFlashCardState] = useState({
