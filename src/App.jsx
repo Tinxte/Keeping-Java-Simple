@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import data from "./components/trivia.json"
 import './App.css'
 import FlashCard from './components/Flashcard'
@@ -20,7 +19,7 @@ function App() {
      
       <h1>Keeping <font color= "#ED8B00">Java</font> Simple</h1>
 
-<div>
+<div className="flashCardComponent">
     <FlashCard 
     number={randomIndex} 
     data={trivia}

@@ -7,6 +7,10 @@
 
 /*style flashcard component */
 
+#flashCardComponent {
+  margin: 3rem auto;
+}
+
 #flashCard {
   width: 500px;
   height: 250px;
@@ -15,7 +19,6 @@
   align-content: center;
   flex-direction: column;
   overflow: auto;
-  margin: 1rem auto;
   padding: 2rem;
   box-shadow: 0px .25rem 1rem;
   border-radius: 5px

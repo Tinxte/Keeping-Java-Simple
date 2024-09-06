@@ -56,6 +56,10 @@
     "answer" : "Inheritance, Encapsulation, Abstraction, and Polymorphism"
   },
   {
+    "question": "What is MVC?",
+    "answer" : "MVC stands for Model-View-Controller, a design pattern where an application is broken into three components: models, views, and controllers."
+  },
+  {
     "question": "",
     "answer" : ""
   },
