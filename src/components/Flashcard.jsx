@@ -32,13 +32,19 @@ function handleCardClick() {
     function handleNextClick() {
         //TODO "next" button switches to next card trivia
 
-        // if (currentFlashCard < trivia.length-1)
-        // {
-        //     setFlashCardIndex(currentFlashCard + 1)
-        // }
-        // else {
-        //     setFlashCardIndex(0);
-        // }
+        if (flashCardState.currentStateIndex < trivia.length-1)
+        {
+            setFlashCardState({
+                currentCardState: "question",
+                currentStateIndex: flashCardState.currentStateIndex + 1
+            })
+        }
+        else {
+            setFlashCardState({
+                currentCardState: "question",
+                currentStateIndex: 0
+            })        
+        }
         
     }
 
@@ -46,10 +52,11 @@ function handleCardClick() {
 
     return (
         <>
-        <div onClick={handleCardClick} id="flashCard" className={flashCardState.currentCardState}>
+        <div id="flashCard" className={flashCardState.currentCardState} onClick={handleCardClick}>
         <p>{trivia[flashCardState.currentStateIndex][flashCardState.currentCardState]}</p>
         </div>
-        <button className="nextButton">Next ➔</button>
+
+        <button className="nextButton" onClick={handleNextClick}>Next ➔</button>
         </>
     );
 }
