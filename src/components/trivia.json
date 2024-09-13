@@ -27,7 +27,7 @@
 
         {
         "question": "True or False: a main method is required to run a Java program.",
-        "answer": "True"
+        "answer": "True: The main method is the entry point of a Java program."
         },
 
         {
@@ -83,6 +83,16 @@
         {
         "question": "How do you declare a new HashMap?",
         "answer": "HashMap<dataType, dataType> variableName = new HashMap<>();"
+        },
+
+        {
+        "question": "What is the difference between a set and a list?",
+        "answer": "A set is unordered and contains different elements, whereas a list is ordered and can contain duplicate elements inside of it."
+        },
+
+        {
+        "question": "How do you check string equality in Java?",
+        "answer": ".equals()"
         }
     ]
 }
