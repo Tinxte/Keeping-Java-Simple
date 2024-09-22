@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function FlashCard({number, data}) {
 
@@ -17,6 +18,19 @@ const [flashCardState, setFlashCardState] = useState({
     currentStateIndex: currentCardIndex
 });
 
+const [isFlipped, setIsFlipped] = useState(false);
+const [isAnimating, setIsAnimating] = useState(false);
+
+
+// Flip animation handler
+function handleFlip() {
+    if (!isAnimating) {
+        setIsFlipped(!isFlipped);
+        setIsAnimating(true);
+    }
+}
+
+// Change card contents handler
 function handleCardClick() {
     if (flashCardState.currentCardState === "question") {
         setFlashCardState({currentCardState: "answer",
@@ -52,11 +66,24 @@ function handleCardClick() {
 
     return (
         <>
-        <div id="flashCard" className={flashCardState.currentCardState} onClick={handleCardClick}>
-        <p>{trivia[flashCardState.currentStateIndex][flashCardState.currentCardState]}</p>
-        </div>
+            <div className="flip-card" onClick={handleFlip}>
+                <motion.div
+                className="flip-card-inner"
+                initial="false"
+                animate={{rotateY: isFlipped ? 180 : 360}}
+                transition={{duration: 0.6, animationDirection: "normal"}}
+                onAnimationComplete={() => setIsAnimating(false)}
+                >
 
-        <button className="nextButton" onClick={handleNextClick}>Next ➔</button>
+                <div id="flashCard" className={flashCardState.currentCardState} onClick={handleCardClick}>
+                <p>{trivia[flashCardState.currentStateIndex][flashCardState.currentCardState]}</p>
+                </div>
+
+                </motion.div>
+
+            </div>
+
+            <button className="nextButton" onClick={handleNextClick}>Next ➔</button>
         </>
     );
 }
