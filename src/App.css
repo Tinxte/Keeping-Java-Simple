@@ -11,7 +11,8 @@
   margin: 3rem auto;
 }
 
-#flashCard {
+/* #flashCard-question,
+#flashCard-answer {
   width: 500px;
   height: 250px;
   display: flex;
@@ -23,6 +24,14 @@
   box-shadow: 0px .25rem 1rem;
   border-radius: 5px
 }
+
+#flashCard-question {
+  background-color: white;
+}
+
+#flashCard-answer {
+  background-color: #f4f7f7;
+} */
 
 /* Animation styling */
 .flip-card {
@@ -38,10 +47,25 @@
 .flip-card-back {
   position: absolute;
   backface-visibility: hidden;
+  width: 500px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  overflow: auto;
+  padding: 2rem;
+  box-shadow: 0px .25rem 1rem;
+  border-radius: 5px
 }
 
 .flip-card-back {
   transform: rotateY(180deg);
+  background-color: #f4f7f7;
+}
+
+.flip-card-front {
+  background-color: white;
 }
 
 /* TODO animate card on hover */
@@ -49,14 +73,6 @@
 /* #flashCard:hover {
 
 } */
-
-.question {
-  background-color: white;
-}
-
-.answer {
-  background-color: #f4f7f7;
-}
 
 /* TODO style button component */
 
