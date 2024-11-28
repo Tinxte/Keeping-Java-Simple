@@ -19,7 +19,7 @@ function App() {
      
       <h1>Keeping <font color= "#ED8B00">Java</font> Simple</h1>
 
-<div className="flashCardComponent">
+<div id="flashCardComponent">
     <FlashCard 
     number={randomIndex} 
     data={trivia}

@@ -61,15 +61,15 @@ export default function FlashCard({ number, data }) {
 
   return (
     <>
+      <div className="flip-card-container">
         <div className="flip-card" onClick={handleFlip}>
           <motion.div
             className="flip-card-inner"
             initial="false"
             animate={{ rotateY: isFlipped ? 180 : 360 }}
-            transition={{ duration: 0.6, animationDirection: "normal" }}
+            transition={{ duration: 0.1, animationDirection: "normal" }}
             onAnimationComplete={() => setIsAnimating(false)}
           >
-            {/* TODO refactor card and state change to sync with flip animation*/}
 
             <div className="flip-card-front">
               <p>{trivia[flashCardState.currentStateIndex]["question"]}</p>
@@ -79,10 +79,13 @@ export default function FlashCard({ number, data }) {
             </div>
           </motion.div>
         </div>
+
             {/* TODO correct absolute position issues so button displays in appropriate location */}
       <button className="nextButton" onClick={handleNextClick}>
         Next ➔
       </button>
+      </div>
+
     </>
   );
 }

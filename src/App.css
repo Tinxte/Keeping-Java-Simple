@@ -9,6 +9,7 @@
 
 #flashCardComponent {
   margin: 3rem auto;
+  align-items: center;
 }
 
 /* #flashCard-question,
@@ -41,12 +42,17 @@
 .flip-card-inner {
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  cursor: pointer;
+  /* position: relative;
+  background-color: blueviolet; */
 }
 
 .flip-card-front,
 .flip-card-back {
   position: absolute;
   backface-visibility: hidden;
+  top: 0;
+  margin: 0 auto;
   width: 500px;
   height: 250px;
   display: flex;
@@ -60,12 +66,16 @@
 }
 
 .flip-card-back {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translate(50%, 0);  
+  left: 50%;
   background-color: #f4f7f7;
 }
 
 .flip-card-front {
+  transform: translate(-50%, 0);  
   background-color: white;
+  left: 50%;
+
 }
 
 /* TODO animate card on hover */
@@ -77,5 +87,11 @@
 /* TODO style button component */
 
 /* .nextButton {
-
+position: absolute;
+top: 250px;
 } */
+
+.flip-card-container {
+  position: relative;
+  height: 250px;
+}
