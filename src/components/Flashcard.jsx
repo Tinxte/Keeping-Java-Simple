@@ -8,7 +8,7 @@ export default function FlashCard({ number, data }) {
   // console.log(startingCardIndex);
 
   let trivia = data;
-//   console.log(trivia);
+  //   console.log(trivia);
 
   let currentCardIndex = startingCardIndex;
 
@@ -45,7 +45,6 @@ export default function FlashCard({ number, data }) {
   }
 
   function handleNextClick() {
-
     if (flashCardState.currentStateIndex < trivia.length - 1) {
       setFlashCardState({
         currentCardState: "question",
@@ -70,7 +69,6 @@ export default function FlashCard({ number, data }) {
             transition={{ duration: 0.1, animationDirection: "normal" }}
             onAnimationComplete={() => setIsAnimating(false)}
           >
-
             <div className="flip-card-front">
               <p>{trivia[flashCardState.currentStateIndex]["question"]}</p>
             </div>
@@ -79,13 +77,11 @@ export default function FlashCard({ number, data }) {
             </div>
           </motion.div>
         </div>
+      </div>
 
-            {/* TODO correct absolute position issues so button displays in appropriate location */}
       <button className="nextButton" onClick={handleNextClick}>
         Next ➔
       </button>
-      </div>
-
     </>
   );
 }
