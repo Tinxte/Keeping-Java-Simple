@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function FlashCard({ number, data }) {
   //Pull starting index and flashcard data from parent component JSON
@@ -20,6 +20,22 @@ export default function FlashCard({ number, data }) {
 
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [reset, setReset] = useState(0);
+  const [key, setKey] = useState(0);
+  const [cardSwitch, setCardSwitch] = useState(false);
+
+  // Update key to reset flashcard component
+  const handleReset = () => {
+
+    setKey((prevKey) => prevKey + 1);
+    // setIsFlipped(!isFlipped);
+    // setIsAnimating(false);
+
+
+    // setReset(true);
+    // Reset state after a moment, preventing continuous resetting
+    // setTimeout(() => setReset(false), 0);
+  }
 
   // Flip animation handler
   function handleFlip() {
@@ -56,18 +72,41 @@ export default function FlashCard({ number, data }) {
         currentStateIndex: 0,
       });
     }
-  }
+    // TODO: set card to next question on next button click
+
+    // if (isFlipped) {
+    //   setIsFlipped(!isFlipped);
+    //   // setIsAnimating(false);
+    // }
+
+    if (isFlipped) {
+      setCardSwitch(true);
+      // setIsFlipped(isFlipped);
+      handleReset();
+      // setIsAnimating(false);
+    setCardSwitch(false);
+    }
+
+    }
 
   return (
     <>
       <div className="flip-card-container">
         <div className="flip-card" onClick={handleFlip}>
+          <AnimatePresence initial={false}>
           <motion.div
             className="flip-card-inner"
             initial="false"
-            animate={{ rotateY: isFlipped ? 180 : 360 }}
+            animate={{ rotateY: (
+              cardSwitch 
+              ? 75 
+              : isFlipped 
+              ? 180 
+              : 360) }}
             transition={{ duration: 0.1, animationDirection: "normal" }}
             onAnimationComplete={() => setIsAnimating(false)}
+            // key={reset ? "reset" : "animate"}
+            key={key}
           >
             <div className="flip-card-front">
               <p>{trivia[flashCardState.currentStateIndex]["question"]}</p>
@@ -76,6 +115,7 @@ export default function FlashCard({ number, data }) {
               <p>{trivia[flashCardState.currentStateIndex]["answer"]}</p>
             </div>
           </motion.div>
+          </AnimatePresence>
         </div>
       </div>
 
