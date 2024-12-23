@@ -93,6 +93,11 @@
         {
         "question": "How do you check string equality in Java?",
         "answer": ".equals()"
+        },
+
+        {
+        "question": "True or False: Java is NOT a statically typed language.",
+        "answer": "False"
         }
     ]
 }
